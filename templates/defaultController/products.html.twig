@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	{{ parent() }}
+	Liste des produits
+{% endblock %}
+{% block content %}
+	<div class="container my-5">
+
+
+		<h1 class="text-center mb-4">Liste des produits</h1>
+		<a class="mb-5 btn btn-primary" href="index.php?page=addProduct">
+			Ajouter un produit
+		</a>
+
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+
+			{% for product in products %}
+				<div class="col">
+					<div class="card h-100">
+						<div class="card-body">
+							<h5 class="card-title">{{ product.name }}</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Prix :
+								{{ product.price }}
+								€</h6>
+							<p class="card-text">{{ product.description }}</p>
+						</div>
+						<div class="card-footer text-end">
+							<a class="btn btn-primary" href="index.php?page=updateProduct&id={{product.id}}">
+								Modifier
+							</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
