@@ -3,6 +3,7 @@
 namespace MyApp\Extension;
 
 class SessionExtension extends \Twig\Extension\AbstractExtension
+
 {
     public function getFunctions()
     {

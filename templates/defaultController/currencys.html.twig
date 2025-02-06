@@ -1,25 +1,40 @@
 {% extends "base.html.twig" %}
 {% block title %}
 	{{ parent() }}
-	Liste des monnaie
+	Liste des monnaies
 {% endblock %}
 {% block content %}
-	<div class="container-fluid">
-		<div class="row justify-content-center">
-			<div class="col-12 col-md-6 align-items-center">
-				<a class="btn" href="index.php?
-																																																																																																																																							page=addCurrency">add</a>
-				<h1 class="text-center text-primary fw-bold m-2">Liste des monnaie</h1>
-				{% for currency in currencys %}
-					{{currency.id}}
-					{{currency.name}}<a href="index.php?page=updateCurrency&id={{currency.id}}">
-						<i class="bi bi-pen-fill"></i>
-					</a>
-					<a href="index.php?page=deleteCurrency&id={{currency.id}}">
-						<i class="bi bi-trash2-fill"></i>
-					</a><br/>
-					{% endfor%}
+	<div class="container my-5">
+
+
+		<h1 class="text-center mb-4">Liste des monnaies</h1>
+		<a class="mb-5 btn btn-primary" href="index.php?page=addCurrency">
+			Ajouter une monnaie
+		</a>
+
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+
+			{% for c in currencys %}
+				<div class="col">
+					<div class="card h-100">
+						<div class="card-body">
+							<h5 class="card-title">
+								{{ c.name }}</h5>
+							<h6 class="card-subtitle mb-2 text-muted">Zone Economique :
+								{{ c.economiczone.name }}
+							</h6>
+						</div>
+						<div class="card-footer text-end">
+							<a class="btn btn-primary" href="index.php?page=updateCurrency&id={{c.id}}">
+								Modifier
+							</a>
+							<a class="btn btn-danger" href="index.php?page=deleteCurrency&id={{c.id}}">
+								Supprimer
+							</a>
+						</div>
+					</div>
 				</div>
-			</div>
+			{% endfor %}
 		</div>
-	{% endblock %}
+	</div>
+{% endblock %}

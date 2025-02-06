@@ -1,9 +1,16 @@
 <?php
 declare (strict_types = 1);
-require_once __DIR__ . '/../vendor/autoload.php';
 
 use MyApp\Routing\Router;
 use MyApp\Service\DependencyContainer;
+//use Symfony\Component\ErrorHandler\Debug;
+//use Symfony\Component\ErrorHandler\ErrorHandler;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+//ErrorHandler::register(); // Active le gestionnaire d'erreurs
+//Debug::enable();
+
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 

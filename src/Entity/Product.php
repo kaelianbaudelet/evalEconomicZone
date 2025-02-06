@@ -2,18 +2,25 @@
 declare (strict_types = 1);
 namespace MyApp\Entity;
 
+use MyApp\Entity\Type;
+
 class Product
 {
     private ?int $id = null;
     private string $name;
     private float $price;
     private string $description;
-    public function __construct(?int $id, string $name, float $price, string $description)
+    private int $stock;
+    private Type $type;
+
+    public function __construct(?int $id, string $name, float $price, string $description, int $stock, Type $type)
     {
         $this->id = $id;
         $this->name = $name;
         $this->price = $price;
         $this->description = $description;
+        $this->stock = $stock;
+        $this->type = $type;
     }
     # Id
     public function getId(): ?int
@@ -50,5 +57,22 @@ class Product
     public function setDescription(string $description): void
     {
         $this->description = $description;
+    }
+    # Stock
+    public function getStock(): int
+    {
+        return $this->stock;
+    }
+    public function setStock(int $stock): void
+    {
+        $this->stock = $stock;
+    }
+    public function getType(): Type
+    {
+        return $this->type;
+    }
+    public function setType(Type $type): void
+    {
+        $this->type = $type;
     }
 }

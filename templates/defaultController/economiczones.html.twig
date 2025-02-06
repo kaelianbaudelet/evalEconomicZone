@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	{{ parent() }}
+	Liste des zones Eco
+{% endblock %}
+{% block content %}
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-6 align-items-center">
+				<a class="btn" href="index.php?
+																																																																																																									page=addEconomicZone">add</a>
+				<h1 class="text-center text-primary fw-bold m-2">Liste des Zones Eco</h1>
+				{% for e in economiczones %}
+					{{e.id}}
+					{{e.name}}<a href="index.php?page=updateEconomicZone&id={{e.id}}">
+						<i class="bi bi-pen-fill"></i>
+					</a>
+					<a href="index.php?page=deleteEconomicZone&id={{e.id}}">
+						<i class="bi bi-trash2-fill"></i>
+					</a><br/>
+					{% endfor%}
+				</div>
+			</div>
+		</div>
+	{% endblock %}

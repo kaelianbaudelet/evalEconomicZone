@@ -2,6 +2,7 @@
 namespace MyApp\Service;
 
 use MyApp\Model\CurrencyModel;
+use MyApp\Model\EconomicZoneModel;
 use MyApp\Model\ProductModel;
 use MyApp\Model\TypeModel;
 use MyApp\Model\UserModel;
@@ -41,6 +42,9 @@ class DependencyContainer
             case 'CurrencyModel':
                 $pdo = $this->get('PDO');
                 return new CurrencyModel($pdo);
+            case 'EconomicZoneModel':
+                $pdo = $this->get('PDO');
+                return new EconomicZoneModel($pdo);
             default:
                 throw new \Exception("No service found for key: " . $key);
         }

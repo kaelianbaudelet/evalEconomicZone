@@ -22,11 +22,20 @@
 							<h6 class="card-subtitle mb-2 text-muted">Prix :
 								{{ product.price }}
 								€</h6>
+							<h6 class="card-subtitle mb-2 text-muted">Stock :
+								{{ product.stock }}
+								unités</h6>
+							<h6 class="card-subtitle mb-2 text-muted">Type:
+								{{ product.type.label }}
+							</h6>
 							<p class="card-text">{{ product.description }}</p>
 						</div>
 						<div class="card-footer text-end">
 							<a class="btn btn-primary" href="index.php?page=updateProduct&id={{product.id}}">
 								Modifier
+							</a>
+							<a class="btn btn-danger" href="index.php?page=deleteProduct&id={{product.id}}">
+								Supprimer
 							</a>
 						</div>
 					</div>

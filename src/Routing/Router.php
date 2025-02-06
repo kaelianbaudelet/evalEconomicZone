@@ -5,6 +5,7 @@ declare (strict_types = 1);
 namespace MyApp\Routing;
 
 use MyApp\Controller\DefaultController;
+use MyApp\Controller\ProductController;
 use MyApp\Service\DependencyContainer;
 
 class Router
@@ -29,18 +30,27 @@ class Router
             '500' => [DefaultController::class, 'error500'],
             'contact' => [DefaultController::class, 'contact'], // Ajouter une nouvelle page de contact
             'legals' => [DefaultController::class, 'legals'], // Ajouter une nouvelle page de mentions légales
-            'types' => [DefaultController::class, 'types'],
-            'products' => [DefaultController::class, 'products'],
             'users' => [DefaultController::class, 'users'],
+            // Types
+            'types' => [DefaultController::class, 'types'],
             'updateType' => [DefaultController::class, 'updateType'],
-            'updateProduct' => [DefaultController::class, 'updateProduct'],
             'addType' => [DefaultController::class, 'addType'],
-            'addProduct' => [DefaultController::class, 'addProduct'],
             'deleteType' => [DefaultController::class, 'deleteType'],
+            // Products
+            'products' => [ProductController::class, 'products'],
+            'updateProduct' => [ProductController::class, 'updateProduct'],
+            'addProduct' => [ProductController::class, 'addProduct'],
+            'deleteProduct' => [ProductController::class, 'deleteProduct'],
+            // Currencys
             'currencys' => [DefaultController::class, 'currencys'],
             'deleteCurrency' => [DefaultController::class, 'deleteCurrency'],
             'addCurrency' => [DefaultController::class, 'addCurrency'],
             'updateCurrency' => [DefaultController::class, 'updateCurrency'],
+            // Economic Zones
+            'economiczones' => [DefaultController::class, 'economiczones'],
+            'deleteEconomicZone' => [DefaultController::class, 'deleteEconomicZone'],
+            'addEconomicZone' => [DefaultController::class, 'addEconomicZone'],
+            'updateEconomicZone' => [DefaultController::class, 'updateEconomicZone'],
         ];
         $this->defaultPage = 'home';
         $this->errorPage = '404';

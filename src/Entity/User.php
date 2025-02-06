@@ -134,4 +134,26 @@ class User
     {
         $this->email = $email;
     }
+
+    # Password
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): void
+    {
+        $this->email = $password;
+    }
+
+    # Role
+    public function getRole(): string
+    {
+        return $this->role;
+    }
+
+    public function setRole(string $role): void
+    {
+        $this->email = $role;
+    }
 }

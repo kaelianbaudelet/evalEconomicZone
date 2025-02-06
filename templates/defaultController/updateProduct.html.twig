@@ -14,6 +14,17 @@
 					<input type="text" value="{{product.name}}" name="name" class="form-control">
 					<input type="text" value="{{product.price}}" name="price" class="form-control">
 					<textarea name="description" class="form-control">{{product.description}}</textarea>
+					<input type="text" value="{{product.stock}}" name="stock" class="form-control">
+					<select id="idType" name="idType" class="form-
+																														control" required>
+						{% for t in types %}
+							{% if t.id == product.type.id %}
+								<option value="{{t.id}}" selected>{{t.label}}</option>
+							{% else %}
+								<option value="{{t.id}}">{{t.label}}</option>
+							{% endif %}
+						{% endfor %}
+					</select>
 					<div class="text-center">
 						<input type="submit" value="Modifier" class="btn btn-primary m-2">
 					</div>
